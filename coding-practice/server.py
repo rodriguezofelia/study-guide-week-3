@@ -21,6 +21,7 @@ def show_results():
 @app.route('/save-name', methods=['POST'])
 def saves_name():
     persons_name = request.form.get('name')
+    session['name'] = persons_name
     return render_template('homepage.html')
 
 
