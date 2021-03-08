@@ -7,20 +7,21 @@ app.secret_key = "blahhhhhhhh"
 def show_homepage():
     return render_template('homepage.html')
 
-###############################
-#                             #
-# 1) Finish the routes below. #
-#                             #
-###############################
-
 
 @app.route('/form')
 def show_form():
     return render_template('form.html')
 
+
 @app.route('/results')
 def show_results():
     return render_template('results.html')
+
+
+@app.route('/save-name', methods=['POST'])
+def saves_name():
+    persons_name = request.form.get('name')
+    return render_template('homepage.html')
 
 
 if __name__ == "__main__":

@@ -5,9 +5,11 @@
 Welcome to the Site
 
 <p>Enter your name below:</p>
-<form>
-  <input type="text" name="name"> Name<br>
-  <button type="submit">Click here to submit</button>
+<form action="/save-name" method="POST">
+    <label for="name-input">Name</label>
+    <input type="text" name="name" id="name-input">
+
+    <button type="submit">Click here to submit</button>
 </form>
 
 {% endblock %}
