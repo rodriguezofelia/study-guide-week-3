@@ -6,10 +6,11 @@
 <p>#3) Fix this form so it submits to the route /results.</p>
 
 <p>What kind of message would you like?</p>
-<form>
+<form action="/results" method="POST">
   <input type="checkbox" name="cheery"> Cheery<br>
   <input type="checkbox" name="honest"> Honest<br>
   <input type="checkbox" name="dreary"> Dreary<br>
+  <input type="submit">
 </form>
 
 {% endblock %}
