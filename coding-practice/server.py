@@ -15,7 +15,24 @@ def show_form():
 
 @app.route('/results')
 def show_results():
-    return render_template('results.html')
+    cheery = request.args.get('cheery')
+    honest = request.args.get('honest')
+    dreary = request.args.get('dreary')
+
+    if cheery and honest and dreary:
+        message = "How so?"
+    elif cheery and honest and not dreary:
+        message = "I love that for you."
+    elif honest and dreary:
+        message = "Oh no! What's wrong?"
+    elif cheery and dreary and not honest: 
+        message = "Well that is a bit confusing!"
+    elif honest:
+        message = "At least you're honest!"
+    else:
+        message = "Would you like some wine?"
+
+    return render_template('results.html', msg=message)
 
 
 @app.route('/save-name', methods=['POST'])
